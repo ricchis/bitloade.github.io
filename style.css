@@ -1,0 +1,48 @@
+body {
+  background-color: #4f4f4f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  color: black;
+  height: 100vh;
+}
+
+.bitcoin {
+  position: RELATIVE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  border: 5px dashed gold;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.bitcoin::before {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  content: "";
+  bottom: -200%;
+  background-color: gold;
+  z-index: -1;
+  border-radius: 42%;
+  animation: coinFillLoader 2s ease-in-out infinite;
+}
+
+@keyframes coinFillLoader {
+  0% {
+    transform: translatey(-0%) rotate(0deg);
+  }
+  25% {
+    transform: translatey(-25%) rotate(115deg);
+  }
+  75% {
+    transform: translatey(-75%) rotate(230deg);
+  }
+  100% {
+    transform: translatey(-100%) rotate(460deg);
+  }
+}
